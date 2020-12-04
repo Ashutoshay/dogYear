@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Dog Years
+	</title>
+	<style>
+		body{
+			background-image: url('2.jpg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			font-family: "Lucida Console", Courier, monospace;
+		}
+		
+		.main
+		{
+			width: 900px;
+			height: 500px;
+			background-color: ;
+			position: relative;
+			left: 10%;
+			top: 50%;
+			transform: translate(-20%, -5%);
+			text-align: center;
+			padding: 25px; 
+			float: left;
+			margin-bottom: 20px;
+			
+		}
+		.main label{
+			font-size: 25px;
+			display: block;
+			margin-top: 20px;
+			
+		}
+		.main input{
+			margin-top: 20px;
+			height: 30px;
+			width: 200px;
+			border-radius: 5px;
+			border:none;
+			border-bottom: 2px solid gray;
+			outline: none;
+			font-size: 15px;
+
+		}
+		.main button{
+			margin-top: 25px;
+			font-size: 20px;
+			width: 190px;
+			height: 40px;
+			border-radius: 5px;
+			border:none;
+			outline: none;
+			background-image: linear-gradient(to left, #e6e6e6,   #e6ffb3);
+		}
+		.main i{
+			font-size: 50px;
+			color: white;
+		}
+		.main .pp{
+			font-size: 50px;
+		}
+		.ani {
+  width: 300px;
+  height: 70px;
+  background-color: white;
+  text-align: center;
+  position: relative;
+  animation: mymove 5s infinite;
+  display: none;
+  border:none;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 17px;
+}
+.for{
+	 width: 400px;
+  height: 120px;
+  background-color: white;
+  text-align: center;
+  position: relative;
+  animation: mymove 5s infinite;
+  background-image: url('1.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: cover;
+ 
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+#div1 {animation-timing-function: linear;}
+#div2 {animation-timing-function: ease;}
+#div3 {animation-timing-function: ease-in;}
+#div4 {animation-timing-function: ease-out;}
+#div5 {animation-timing-function: ease-in-out;}
+@keyframes mymove {
+  0% {left: 300px;}
+  50% {left: 300px;}
+  100%{left: 300px;}
+}
+	</style>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+<body>
+	<div class="main">
+		<p class="pp">Human <i class="fa fa-random" aria-hidden="true"></i> Dog</p>
+		<div id="div1" class="ani"><p>Sorry Buddy! You are not born</p></div>
+<div id="div2" class="for"><h1>Your Welcome</h1></div>
+<div id="div3" class="ani"><p>you are a Puppy!</p></div>
+<div id="div4" class="ani"><p>you are a Puppy!</p></div>
+<div id="div5" class="ani"><p>Child marriage in Dog year</p></div>
+
+		<label>Enter Human year</label>
+		<input type="text" name="" id="human" required=""><br>
+		<label> Your Dog years</label>
+		<input type="text" name="" id="dog"><br>
+		<button onclick="fun()">Convert</button>
+	</div>
+
+	<script >
+		var x , z, y, m, d , k;
+		function fun() {
+			var age = document.getElementById('human').value;
+			if (age <= 0) {
+				document.getElementById('div2').style.display = 'none';
+				document.getElementById('div1').style.display = 'block';
+				document.getElementById('div3').style.display = 'none';
+				document.getElementById('div4').style.display = 'none';
+				document.getElementById('div5').style.display = 'none';
+			}
+			else{
+				age = Number(age);
+				if ( age <= 21) {
+						if (age < 5) {
+							document.getElementById('div2').style.display = 'none';
+							document.getElementById('div1').style.display = 'none';
+							document.getElementById('div3').style.display = 'block';
+							document.getElementById('div4').style.display = 'none';
+							document.getElementById('div5').style.display = 'none';
+						}
+
+					x = (age * (1/(10.5)));
+					y = parseInt(x);
+					k = x - y;
+					k = k*12;
+					m = parseInt(k);
+					d = k - m;
+					d = d*30;
+					d = Math.ceil(d);
+							document.getElementById('div2').style.display = 'none';
+							document.getElementById('div1').style.display = 'none';
+							document.getElementById('div3').style.display = 'none';
+							document.getElementById('div4').style.display = 'block';
+							document.getElementById('div5').style.display = 'none';
+							document.getElementById('dog').value = y + " Year " + m + " Month " + d + " Day ";
+				}
+				else{
+					z = age - 21;
+					z = z/4;
+					z = z+2;
+					y = parseInt(z);
+					k = z - y;
+					k = k*12;
+					m = parseInt(k);
+					d = k - m;
+					d = d*30;
+					d = Math.ceil(d);
+					document.getElementById('div2').style.display = 'none';
+				document.getElementById('div1').style.display = 'none';
+				document.getElementById('div3').style.display = 'none';
+				document.getElementById('div4').style.display = 'none';
+				document.getElementById('div5').style.display = 'block';
+					document.getElementById('dog').value = y + " Year " + m + " Month " + d + " Day ";
+				}
+			}
+		}
+	</script>
+</body>
+</html>
